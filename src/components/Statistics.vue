@@ -1,4 +1,5 @@
 <template>
+<v-col lg="7" cols="12">
 <v-row>
     <v-col lg="6" cols="12" v-for="(item,index) in activities" :key="index">
               <v-card elevation="2" class="rounded-lg">
@@ -14,6 +15,7 @@
               </v-card>
             </v-col>
 </v-row>
+</v-col>
 </template>
 
 <script>

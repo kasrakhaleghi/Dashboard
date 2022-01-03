@@ -1,7 +1,7 @@
 <template>
-<v-navigation-drawer v-model="drawer" app color="blue-grey lighten-5">
+<v-navigation-drawer  :right="$vuetify.rtl" v-model="drawer" app color="blue-grey lighten-5" fixed>
     <v-img src="" class="pa-4"
-    gradient="to right, rgba(239, 169, 174,.8),rgba(52, 138, 167,.8)">
+    gradient="to right,rgba(52, 138, 167,.8), rgba(239, 169, 174,.8)">
     <div class="text-center mt-4">
         <v-avatar class="mb-4" color="grey darken-1" size="64">
           <v-img src="https://cdn.vuetifyjs.com/images/john.jpg"/>
@@ -12,15 +12,17 @@
       <v-divider></v-divider>
       <v-list>
         <v-list-item
-          v-for="[icon, text] in links"
-          :key="icon"
+          v-for="(menu, text) in menus"
+          :key="text"
           link
         >
           <v-list-item-icon>
-            <v-icon>{{ icon }}</v-icon>
+            <v-icon>{{ menu.icon }}</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title>{{ text }}</v-list-item-title>
+            <router-link :to="{name:menu.route}" style="text-decoration: none; color: inherit;">
+            <v-list-item-title>{{ menu.text }}</v-list-item-title>
+            </router-link>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -32,17 +34,11 @@ export default {
     name:'Leftbar',
     data(){
         return{
-          menus:[
-             {title:"Profile",icon:"mdi-account"},
-             {title:"Change Password",icon:"mdi-key"},
-             {title:"setting",icon:"mdi-cog"},
-             {title:"Logout",icon:"mdi-logout"},
-          ],
-            links: [
-        ['mdi-account', 'Profile'],
-        ['mdi-inbox', 'Inbox'],
-        ['mdi-cog', 'Setting'],
-        ['mdi-shield-star', 'Privacy Policy'],
+            menus: [
+        {icon:"mdi-home-variant", text:"Main", route:"Dashboard" },
+        {icon:'mdi-inbox',text: 'Inbox',route:"InboxView"},
+        {icon:'mdi-cog',text: 'Setting',route:"SettingView"},
+        {icon:'mdi-shield-star',text: 'Privacy Policy',route:"PrivacyView"},
       ],
         }
     }

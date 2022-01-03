@@ -12,6 +12,11 @@
 export default {
 
   name: 'App',
+  methods: {
+      changeRTL () {
+        this.$vuetify.rtl = true
+      },
+    },
 
   data: () => ({
     //

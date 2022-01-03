@@ -1,4 +1,5 @@
 <template>
+<v-col lg="5" cols="12">
   <v-card
     class="mx-auto text-center"
     color="green"
@@ -36,6 +37,7 @@
       </v-btn>
     </v-card-actions>
  </v-card>
+  </v-col>
 </template>
 
 <script>

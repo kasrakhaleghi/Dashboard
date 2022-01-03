@@ -1,5 +1,9 @@
 <template>
-  <v-data-table
+<div>
+ <h3>Table</h3>
+  <v-row>
+  <v-col lg="12">
+   <v-data-table
     :headers="headers"
     :items="desserts"
     class="elevation-1"
@@ -13,10 +17,15 @@
       </v-chip>
     </template>
   </v-data-table>
+         </v-col>
+        </v-row>
+</div>
 </template>
 
 <script>
+import About from '../views/About.vue'
   export default {
+  components: { About },
     data () {
       return {
         headers: [
