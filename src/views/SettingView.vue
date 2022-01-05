@@ -1,7 +1,8 @@
 <template>
-    <v-app>
+    <div>
         <setting-main/>
-    </v-app>
+    <router-view></router-view>
+    </div>
 </template>
 <script>
 import SettingMain from '../components/SettingMain.vue'

@@ -1,11 +1,11 @@
 <template>
-<v-app>
+<div>
     <inbox-title/>
     <v-spacer/>
     <br/>
     <inbox-file/>
     <router-view></router-view>
-</v-app>
+</div>
 </template>
 <script>
 import InboxTitle from '../components/InboxTitle.vue'

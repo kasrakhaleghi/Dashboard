@@ -1,12 +1,12 @@
 <template>
-<v-app>
+<div>
   <topbar @handeDrawer=" drawer = !drawer"/>
   <leftbar :drawer="drawer"/>
     <v-container 
     class="py-15 px-5"
     fluid>
     <router-view></router-view>
-      <div class="dashboard">
+      <div class="dashboard" v-if="this.$route.name === 'Dashboard' ">
         <v-subheader class="d-flex justify-space-between align-center">
           <h3>Dashboard</h3>
         </v-subheader>
@@ -17,7 +17,7 @@
              <tabledown/>
       </div>
     </v-container>
-</v-app>
+</div>
 </template>
 
 <script>

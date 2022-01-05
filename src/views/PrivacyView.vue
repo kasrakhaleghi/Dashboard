@@ -1,7 +1,8 @@
 <template>
-    <v-app>
+    <div>
         <privacy/>
-    </v-app>
+        <router-view></router-view>
+    </div>
 </template>
 <script>
 import Privacy from '../components/Privacy.vue'

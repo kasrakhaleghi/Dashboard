@@ -22,29 +22,32 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
-   {
-    path: '/dashboard',
-    name: 'Dashboard',
-    component: Dashboard,
-    children:[{
-      path:'inbox',
-      name:'InboxView',
-      component:InboxView
-},{
-      path:'setting',
-      name:'SettingView',
-      component:SettingView
-},{
-      path:'privacy',
-      name:'PrivacyView',
-      component:PrivacyView
-}]
-  },
+  ,
 
 ]
 
 const router = new VueRouter({
-  routes
+  routes:[
+    {path: '/dashboard',
+    name: 'Dashboard',
+    component: Dashboard,
+
+      children:[{
+        path:'inbox',
+        name:'InboxView',
+        component:InboxView
+  },{
+        path:'setting',
+        name:'SettingView',
+        component:SettingView
+  },{
+        path:'privacy',
+        name:'PrivacyView',
+        component:PrivacyView
+  }]
+    }
+  ]
+
 })
 
 export default router
